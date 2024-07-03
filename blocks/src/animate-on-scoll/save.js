@@ -12,10 +12,6 @@ import {
 } from '@wordpress/i18n';
 
 
-import {
-	select
-} from '@wordpress/data';
-
 
 /**
  * Internal Dependencies
