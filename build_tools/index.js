@@ -122,14 +122,14 @@ async function incramentCallback(value) {
 		const versionSearch = /Version: (?:(?<major>[\d]+)\.(?<minor>[\d]+)\.(?<revision>[\d]+))/;
 
 		//
-		const fileContent = await readFile('./h2ml-grid.php', 'utf8');
+		const fileContent = await readFile('./h2ml-animate.php', 'utf8');
 
 		//
 		const newVersion = Number(versionSearch.exec(fileContent).groups[version]) + 1;
 		const updatedFile = fileContent.replace(versionSearch, `Version: ${version === 'major' ? newVersion : '$<major>'}.${version === 'minor' ? newVersion : '$<minor>'}.${version === 'revision' ? newVersion : '$<revision>'}`);
 	
 		//
-		writeFile('./h2ml-grid.php', updatedFile);
+		writeFile('./h2ml-animate.php', updatedFile);
 	}
 }
 
