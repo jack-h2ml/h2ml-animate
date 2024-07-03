@@ -31,7 +31,7 @@ export class H2mlAnimateOnScroll {
 	static #toggleElement = (elemData, show) => {
 		//
 		const {
-			elem,
+			target,
 			animateIn,
 			animateOut,
 			animateCustomClasses,
@@ -39,12 +39,11 @@ export class H2mlAnimateOnScroll {
 			animateOutDuration,
 		} = elemData;
 
-		//
-		console.log(elem, elem.firstChild);
+		console.log(target);
 		
 		//
-		hmm.style.setProperty('--animate-duration', show ? animateInDuration : animateOutDuration);
-		hmm.classList.remove(
+		target.style.setProperty('--animate-duration', show ? animateInDuration : animateOutDuration);
+		target.classList.remove(
 			...(!show  
 				? (animateIn && [animateIn]) ?? []
 				: (animateOut && [animateOut]) ?? []
@@ -54,7 +53,7 @@ export class H2mlAnimateOnScroll {
 				: (animateCustomClasses && [animateCustomClasses]) ?? []
 			)
 		);
-		hmm.classList.add(
+		target.classList.add(
 			...(show  
 				? (animateIn && [animateIn]) ?? []
 				: (animateOut && [animateOut]) ?? []
@@ -188,14 +187,15 @@ export class H2mlAnimateOnScroll {
 		} = elemData;
 
 		//
-		elem.firstChild.classList.add('animate__animated');
+		const target = elem.firstElementChild;
+		target.classList.add('animate__animated');
 
 		//
 		elem.dataset.animateOnScrollKey = key;
-		this.#elements.set(key, {...elemData, elem});
+		this.#elements.set(key, {...elemData, target});
 
 		//
-		return w;
+		return elem;
 	}
 
 	/** */

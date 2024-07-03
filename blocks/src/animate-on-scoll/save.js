@@ -41,9 +41,7 @@ export default function Save({attributes}) {
 	} = attributes;
 
 	//
-	const innerBlocksProps = useInnerBlocksProps.save(useBlockProps.save({
-		className: 'animate__animated'
-	}));
+	const innerBlocksProps = useInnerBlocksProps.save(useBlockProps.save());
 
 	//
 	return (
