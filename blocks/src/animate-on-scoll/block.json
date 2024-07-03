@@ -1,0 +1,61 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "h2ml/animate-on-scroll",
+	"version": "0.1.0",
+	"title": "H2ML Animate Block",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "A block for animating other blocks on scroll.",
+	"textdomain": "h2ml",
+	"supports": {
+		"reusable": true,
+		"layout": {
+			"allowSwitching": false,
+			"allowInheriting": false,
+			"allowEditing": true,
+			"default": {
+			  "type": "flex",
+			  "flexWrap": "wrap",
+			  "verticalAlignment": "top",
+			  "justifyContent": "left",
+			  "orientation": "vertical"
+			}
+		}
+	},
+	"attributes": {
+		"animateIn": {
+			"type": "string",
+			"default": ""
+		},
+		"animateOut": {
+			"type": "string",
+			"default": ""
+		},
+		"animateCustomClasses": {
+			"type": "array",
+			"default": []
+		},
+		"animateInDuration": {
+			"type": "string",
+			"default": "500ms"
+		},
+		"animateOutDuration": {
+			"type": "string",
+			"default": "500ms"
+		},
+		"animateThreshold": {
+			"type": "number",
+			"default": 0.3
+		},
+		"animateDirection": {
+			"type": "string",
+			"default": "forwards"
+		}
+	},
+	"style": "file:./style-index.css",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"viewScript": "file:./view.js",
+	"viewStyle": "file:./view.css"
+}

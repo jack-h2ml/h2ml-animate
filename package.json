@@ -1,0 +1,23 @@
+{
+  "name": "h2ml-animate",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "scripts": {
+    "reviseBuild": "node ./build_tools i:revision && wp-scripts build --webpack-src-dir=blocks/src --output-path=blocks/build && git add . && git commit -m 'Webpack Revision Build' && git push",
+    "build": "wp-scripts build --webpack-src-dir=blocks/src --output-path=blocks/build",
+    "watch": "wp-scripts build --webpack-src-dir=blocks/src --output-path=blocks/build --watch"
+  },
+  "author": "Jack Notman",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/icons": "^9.22.0",
+    "@wordpress/scripts": "^27.9.0"
+  },
+  "dependencies": {
+    "@emotion/styled": "^11.11.0",
+    "@h2ml/bettertimeout": "^1.0.4",
+    "@wordpress/api-fetch": "^6.42.0",
+    "animate.css": "^4.1.1"
+  },
+  "description": ""
+}
