@@ -30,8 +30,7 @@ export default function({animationClassNames, attributes, setAttributes}) {
 		animateCustomClasses,
 		animateInDuration,
 		animateOutDuration,
-		animateInThreshold,
-		animateOutThreshold,
+		animateThreshold,
 		animateDirection
 	} = attributes;
 
@@ -48,8 +47,7 @@ export default function({animationClassNames, attributes, setAttributes}) {
 			<AdvancedConfig 
 				animateInDuration={animateInDuration}
 				animateOutDuration={animateOutDuration}
-				animateInThreshold={animateInThreshold}
-				animateOutThreshold={animateOutThreshold}
+				animateThreshold={animateThreshold}
 				animateDirection={animateDirection}
 				setAttributes={setAttributes}
 			/>
