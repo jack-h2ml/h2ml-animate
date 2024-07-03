@@ -3,7 +3,7 @@
 /*
 Plugin Name: H2ML Animate
 Author: Jack Notman
-Version: 1.0.5
+Version: 1.0.6
 */
 
 /**
