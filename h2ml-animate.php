@@ -3,14 +3,13 @@
 /*
 Plugin Name: H2ML Animate
 Author: Jack Notman
-Version: 1.0.2
+Version: 1.0.3
 */
 
 /**
  * Handle Updates
  */
 
- /*
 require 'plugin-update-checker-5.0/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
@@ -22,7 +21,7 @@ add_action('init', function() {
 	);
 	$themeUpdateChecker->setBranch('main');
 });
-*/
+
 
 /**
  * Register the Blocks
