@@ -22,7 +22,8 @@ import 'animate.css/animate.min.css';
 export class H2mlAnimateOnScroll {
 
 	/** */
-	static #elements = new Map();
+	//static #elements = new Map();
+	static #elements = [];
 
 	/** */
 	static #debouncerStore;
@@ -127,7 +128,7 @@ export class H2mlAnimateOnScroll {
 
 	/** */
 	static #trackerCallback = (Tracker, entry, { isFirstRun, prevScrollPosition, currScrollPosition, scrollDelta }) => {
-		const key = Number(Tracker.target.dataset.animateOnScrollKey);
+		const index = Number(Tracker.target.dataset.animateOnScrollKey);
 		if (isFirstRun) {
 			const {
 				intersectionRatio: currRatio,
@@ -137,7 +138,7 @@ export class H2mlAnimateOnScroll {
 			} = entry;
 
 			//
-			const elemData = H2mlAnimateOnScroll.#elements.get(key);
+			const elemData = H2mlAnimateOnScroll.#elements[index];
 			const {
 				animateThreshold,
 				animateDirection
@@ -166,11 +167,11 @@ export class H2mlAnimateOnScroll {
 				const maxId = H2mlAnimateOnScroll.#debouncerStore.get('maxId');
 				//
 				if (minId === null || maxId === null) {
-					H2mlAnimateOnScroll.#debouncerStore.set('minId', key);
-					H2mlAnimateOnScroll.#debouncerStore.set('maxId', key);
+					H2mlAnimateOnScroll.#debouncerStore.set('minId', index);
+					H2mlAnimateOnScroll.#debouncerStore.set('maxId', index);
 				} else {
-					H2mlAnimateOnScroll.#debouncerStore.set('minId', Math.min(minId, key));
-					H2mlAnimateOnScroll.#debouncerStore.set('maxId', Math.max(maxId, key));
+					H2mlAnimateOnScroll.#debouncerStore.set('minId', Math.min(minId, index));
+					H2mlAnimateOnScroll.#debouncerStore.set('maxId', Math.max(maxId, index));
 				}
 			}
 		}
@@ -181,7 +182,7 @@ export class H2mlAnimateOnScroll {
 		//
 		const {
 			elem,
-			index: key
+			index
 		} = elemData;
 
 		//
@@ -189,8 +190,9 @@ export class H2mlAnimateOnScroll {
 		target.classList.add('animate__animated');
 
 		//
-		elem.dataset.animateOnScrollKey = key;
-		this.#elements.set(key, {...elemData, target});
+		elem.dataset.animateOnScrollKey = index;
+		//this.#elements.set(index, {...elemData, target});
+		this.#elements[index] = {...elemData, target}
 
 		//
 		return elem;
