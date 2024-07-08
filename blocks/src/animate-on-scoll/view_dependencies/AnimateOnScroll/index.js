@@ -38,8 +38,6 @@ export class H2mlAnimateOnScroll {
 			animateInDuration,
 			animateOutDuration,
 		} = elemData;
-
-		console.log(target);
 		
 		//
 		target.style.setProperty('--animate-duration', show ? animateInDuration : animateOutDuration);
