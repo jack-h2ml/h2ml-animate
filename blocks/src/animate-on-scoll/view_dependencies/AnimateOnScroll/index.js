@@ -188,7 +188,7 @@ export class H2mlAnimateOnScroll {
 		} = elemData;
 
 		//
-		const target = elem.firstElementChild;
+		const target = elem;
 		target.classList.add('animate__animated');
 
 		//
