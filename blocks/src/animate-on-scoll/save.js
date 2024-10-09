@@ -39,6 +39,8 @@ export default function Save({attributes}) {
 	//
 	const innerBlocksProps = useInnerBlocksProps.save(useBlockProps.save());
 
+	console.log(animateCustomClasses);
+
 	//
 	return (
 		<div 
