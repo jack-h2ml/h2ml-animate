@@ -48,7 +48,7 @@ export default function Save({attributes}) {
 			data-animate={true}
 			data-animate-in={animateIn}
 			data-animate-out={animateOut}
-			data-animate-custom-classes={animateCustomClasses}
+			data-animate-custom-classes={animateCustomClasses.join(' ')}
 			data-animate-in-duration={animateInDuration}
 			data-animate-out-duration={animateOutDuration}
 			data-animate-threshold={animateThreshold}
