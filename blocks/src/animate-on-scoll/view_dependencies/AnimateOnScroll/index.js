@@ -49,7 +49,7 @@ export class H2mlAnimateOnScroll {
 				? (animateIn && [animateIn]) ?? []
 				: (animateOut && [animateOut]) ?? []
 			),
-			...(show 
+			...(!show 
 				? []
 				: (animateCustomClasses && [animateCustomClasses]) ?? []
 			)
@@ -59,7 +59,7 @@ export class H2mlAnimateOnScroll {
 				? (animateIn && [animateIn]) ?? []
 				: (animateOut && [animateOut]) ?? []
 			),
-			...(!show 
+			...(show 
 				? []
 				: (animateCustomClasses && [animateCustomClasses]) ?? []
 			)
