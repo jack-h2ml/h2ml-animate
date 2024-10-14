@@ -200,7 +200,9 @@ export class H2mlAnimateOnScroll {
 
 		//
 		const target = elem;
-		target.classList.add('animate__animated');
+		if(target.firstElementChild) {
+			target.firstElementChild.classList.add('animate__animated');
+		}
 
 		//
 		elem.dataset.animateOnScrollKey = index;
