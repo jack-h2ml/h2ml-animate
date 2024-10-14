@@ -69,7 +69,7 @@ export class H2mlAnimateOnScroll {
 
 			//
 			target.firstElementChild.classList.add(
-				...(!show  
+				...(show  
 					? (animateIn && [animateIn]) ?? []
 					: (animateOut && [animateOut]) ?? []
 				)
