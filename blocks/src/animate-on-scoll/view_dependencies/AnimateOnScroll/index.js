@@ -42,6 +42,7 @@ export class H2mlAnimateOnScroll {
 		
 		//
 		target.style.setProperty('--animate-duration', show ? animateInDuration : animateOutDuration);
+		console.log(target.firstChild);
 		target.firstChild.classList.remove(
 			...(!show  
 				? (animateIn && [animateIn]) ?? []
