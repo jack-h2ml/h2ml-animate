@@ -42,21 +42,25 @@ export class H2mlAnimateOnScroll {
 		
 		//
 		target.style.setProperty('--animate-duration', show ? animateInDuration : animateOutDuration);
-		target.classList.remove(
+		target.firstChild.classList.remove(
 			...(!show  
 				? (animateIn && [animateIn]) ?? []
 				: (animateOut && [animateOut]) ?? []
-			),
+			)
+		);
+		target.classList.remove(
 			...(!show 
 				? []
 				: (animateCustomClasses && [animateCustomClasses]) ?? []
 			)
 		);
-		target.classList.add(
-			...(show  
+		target.firstChild.classList.add(
+			...(!show  
 				? (animateIn && [animateIn]) ?? []
 				: (animateOut && [animateOut]) ?? []
-			),
+			)
+		);
+		target.classList.add(
 			...(show 
 				? []
 				: (animateCustomClasses && [animateCustomClasses]) ?? []
