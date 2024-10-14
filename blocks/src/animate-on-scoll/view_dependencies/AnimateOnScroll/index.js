@@ -55,15 +55,15 @@ export class H2mlAnimateOnScroll {
 				: (animateCustomClasses && [animateCustomClasses]) ?? []
 			)
 		);
-		if(target.firstChild) {
-			console.log(target.firstChild);
-			target.firstChild?.classList.remove(
+		if(target.firstElementChild) {
+			console.log(target.firstElementChild);
+			target.firstElementChild.classList.remove(
 				...(!show  
 					? (animateIn && [animateIn]) ?? []
 					: (animateOut && [animateOut]) ?? []
 				)
 			);
-			target.firstChild?.classList.add(
+			target.firstElementChild.classList.add(
 				...(!show  
 					? (animateIn && [animateIn]) ?? []
 					: (animateOut && [animateOut]) ?? []
