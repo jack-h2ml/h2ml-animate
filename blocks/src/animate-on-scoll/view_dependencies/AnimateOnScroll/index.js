@@ -43,22 +43,10 @@ export class H2mlAnimateOnScroll {
 		//
 		target.style.setProperty('--animate-duration', show ? animateInDuration : animateOutDuration);
 		console.log(target.firstChild);
-		target.firstChild?.classList.remove(
-			...(!show  
-				? (animateIn && [animateIn]) ?? []
-				: (animateOut && [animateOut]) ?? []
-			)
-		);
 		target.classList.remove(
 			...(!show 
 				? []
 				: (animateCustomClasses && [animateCustomClasses]) ?? []
-			)
-		);
-		target.firstChild?.classList.add(
-			...(!show  
-				? (animateIn && [animateIn]) ?? []
-				: (animateOut && [animateOut]) ?? []
 			)
 		);
 		target.classList.add(
@@ -67,6 +55,20 @@ export class H2mlAnimateOnScroll {
 				: (animateCustomClasses && [animateCustomClasses]) ?? []
 			)
 		);
+		if(target.firstChild) {
+			target.firstChild?.classList.remove(
+				...(!show  
+					? (animateIn && [animateIn]) ?? []
+					: (animateOut && [animateOut]) ?? []
+				)
+			);
+			target.firstChild?.classList.add(
+				...(!show  
+					? (animateIn && [animateIn]) ?? []
+					: (animateOut && [animateOut]) ?? []
+				)
+			);
+		}
 		//
 		elemData.isShown = show;
 	}
