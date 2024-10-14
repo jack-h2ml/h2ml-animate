@@ -206,7 +206,6 @@ export class H2mlAnimateOnScroll {
 
 		//
 		elem.dataset.animateOnScrollKey = index;
-		//this.#elements.set(index, {...elemData, target});
 		this.#elements[index] = {...elemData, target}
 
 		//
