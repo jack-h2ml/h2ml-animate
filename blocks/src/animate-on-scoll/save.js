@@ -37,11 +37,7 @@ export default function Save({attributes}) {
 	} = attributes;
 
 	//
-	const innerBlocksProps = useInnerBlocksProps.save(useBlockProps.save({
-		style: {
-			overflow: 'hidden'
-		}
-	}));
+	const innerBlocksProps = useInnerBlocksProps.save(useBlockProps.save());
 
 	//
 	return (
