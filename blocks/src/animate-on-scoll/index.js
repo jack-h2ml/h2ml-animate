@@ -17,8 +17,6 @@ import Save from './save';
 
 import './style.scss';
 
-console.log('hmm');
-
 /**
  * Register the Block
  */
